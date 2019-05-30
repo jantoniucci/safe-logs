@@ -7,13 +7,13 @@ This tool is intended to extract personal information or secrets from production
 ```
 64.242.88.10 - - [28/May/2019:16:06:51 +0100] Showing a custom dashboard for Javier Antoniucci
 64.242.88.10 - - [28/May/2019:16:06:52 +0100] Sending a message 'Dear David, I am planning to go to New York next week, Best, Javier Antoniucci' using an internal notification
-64.242.88.10 - - [28/May/2019:16:06:53 +0100] A new message was recived by 'Juan Perez' with an attachment
+64.242.88.10 - - [28/May/2019:16:06:53 +0100] A new message was recived by 'Juan Perez' from Soda Company Inc with an attachment
 ```
 ### to:
 ```
 64.242.88.10 - - [28/May/2019:16:06:51 +0100] Showing a custom dashboard for [NAME]
 64.242.88.10 - - [28/May/2019:16:06:52 +0100] Sending a message 'Dear [NAME], I am planning to go to [LOCATION] next week, Best, [NAME]' using an internal notification
-64.242.88.10 - - [28/May/2019:16:06:53 +0100] A new message was recived by '[NAME]' with an attachment
+64.242.88.10 - - [28/May/2019:16:06:53 +0100] A new message was recived by '[NAME]' from [ORGANIZATION] with an attachment
 ```
 The core processor is isolated from source and target persistences. The default source/target are files but it coul be easily extended to support kafka topics, elastic search collections, etc.
 
@@ -37,6 +37,9 @@ cd safe-logs
 ```
 
 ## Release History
+
+* 0.0.3
+    * Core system : replace organizations by a tag
 
 * 0.0.2
     * Core system : replace locations by a tag
