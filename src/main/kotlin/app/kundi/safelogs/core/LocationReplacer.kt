@@ -12,7 +12,7 @@ private val tokenizer = SimpleTokenizer.INSTANCE
 val LocationReplacer: Replacer = {
         originalText, occurrenceReplacement ->
                 val tokens = tokenizer.tokenize(originalText)
-                val peopleFoundSpans = locationFinderEn.find(tokens)
-                val peopleFoundArray = Span.spansToStrings(peopleFoundSpans, tokens)
-                originalText.replace(peopleFoundArray, occurrenceReplacement)
+                val locationsFoundSpans = locationFinderEn.find(tokens)
+                val locationsFoundArray = Span.spansToStrings(locationsFoundSpans, tokens)
+                originalText.replace(locationsFoundArray, occurrenceReplacement)
 }
