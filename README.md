@@ -5,17 +5,23 @@ This tool is intended to extract personal information or secrets from production
 
 ### from:
 ```
-64.242.88.10 - - [28/May/2019:16:06:51 +0100] Showing a custom dashboard for Javier Antoniucci
+64.242.88.10 - - [28/May/2019:16:06:51 +0100] Accesing using username jantoniucci and password aaa
+64.242.88.10 - - [28/May/2019:16:06:51 +0100] Credit card 1234-5678-9012-3456 from Javier Antoniucci
 64.242.88.10 - - [28/May/2019:16:06:52 +0100] Sending a message 'Dear David, I am planning to go to New York next week, Best, Javier Antoniucci' using an internal notification
-64.242.88.10 - - [28/May/2019:16:06:53 +0100] A new message was recived by 'Juan Perez' from Soda Company Inc with an attachment
+64.242.88.10 - - [28/May/2019:16:06:52 +0100] Sending from jantoniucci@test.com to david@test2.com
+64.242.88.10 - - [28/May/2019:16:06:52 +0100] Accessing from 127.0.0.1:8080 and proxy 192.168.0.250
+64.242.88.10 - - [28/May/2019:16:06:53 +0100] A new message was received by 'Juan Perez' from Soda Company Inc with an attachment
 ```
 ### to:
 ```
-64.242.88.10 - - [28/May/2019:16:06:51 +0100] Showing a custom dashboard for [NAME]
-64.242.88.10 - - [28/May/2019:16:06:52 +0100] Sending a message 'Dear [NAME], I am planning to go to [LOCATION] next week, Best, [NAME]' using an internal notification
-64.242.88.10 - - [28/May/2019:16:06:53 +0100] A new message was recived by '[NAME]' from [ORGANIZATION] with an attachment
+[IPADDRESS] - - [28/May/2019:16:06:51 +0100] Accessing using [USERNAME] and [PASSWORD]
+[IPADDRESS] - - [28/May/2019:16:06:51 +0100] Credit card [CREDITCARD] from [NAME]
+[IPADDRESS] - - [28/May/2019:16:06:52 +0100] Sending a message 'Dear [NAME], I am planning to go to [LOCATION] next week, Best, [NAME]' using an internal notification
+[IPADDRESS] - - [28/May/2019:16:06:52 +0100] Sending from [EMAIL] to [EMAIL]
+[IPADDRESS] - - [28/May/2019:16:06:52 +0100] Accessing from [IPADDRESS] and proxy [IPADDRESS]
+[IPADDRESS] - - [28/May/2019:16:06:53 +0100] A new message was received by '[NAME]' from [ORGANIZATION] with an attachment
 ```
-The core processor is isolated from source and target persistences. The default source/target are files but it coul be easily extended to support kafka topics, elastic search collections, etc.
+The core processor is isolated from source and target persistence. The default source/target are files but it could be easily extended to support kafka topics, elastic search collections, etc.
 
 Performance is a concern, but a raw test shows it processing 100,000 lines (12MB) / minute using 1 vCPU.
 

@@ -1,6 +1,7 @@
 package app.kundi.safelogs.core
 
 import opennlp.tools.tokenize.SimpleTokenizer
+import opennlp.tools.util.Span
 
 fun String.replace(oldValues: Array<String>, newValue: String): String =
     oldValues.fold(this) { acc, old -> acc.replace(old.replace(" .", "."), newValue, ignoreCase = true) }

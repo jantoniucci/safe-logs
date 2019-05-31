@@ -23,6 +23,7 @@ class Main : CliktCommand(name = "swagger-dictionary",
                 .map {NameReplacer(it, nameReplacement)}
                 .map { LocationReplacer(it, locationReplacement) }
                 .map { OrganizationReplacer(it, organizationReplacement) }
+                .map { PatternsReplacer(it, "") }
             FileWriter(sanitizedLines, targetFile.absolutePath)
         }
         printEndMessage(elapsedTime)
